@@ -1,0 +1,79 @@
+/* Custom Var */
+:root {
+	--temporary-border-outline: 3px dashed red;
+}
+
+/* Global settings */
+* {
+	box-sizing: border-box; /* border-box will make it so any padding will not effect the width */
+	padding: 0;
+	margin: 0;
+	outline: none;
+	border: none;
+	scroll-behavior: smooth;
+
+	letter-spacing: 1px;
+	color: whitesmoke;
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	min-height: 100lvh;
+	background-color: #151717;
+
+	overflow-x: hidden;
+}
+p {
+	font-size: 1rem;
+}
+ul,
+ol {
+	list-style: none;
+}
+
+/*  */
+
+h1 {
+	color: whitesmoke;
+	margin-bottom: 10px;
+	font-weight: 600;
+}
+
+.odometer {
+	font-size: 3rem;
+	letter-spacing: 10px;
+}
+
+.social_icon {
+	filter: invert(100);
+	width: 70px;
+}
+
+.socials_container {
+	display: flex;
+	justify-content: space-between;
+	width: 800px;
+}
+
+.social_div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+.social_div h3 {
+	opacity: 0.8;
+}
+
+@media (max-width: 870px) {
+	.socials_container {
+		flex-direction: column;
+		justify-content: space-between;
+		height: 800px;
+	}
+}

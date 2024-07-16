@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Inter font -->
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<link
+			rel="stylesheet"
+			href="style.css"
+		/>
+		<title>Drink water- Project</title>
+	</head>
+	<body>
+		<h1 style="color: whitesmoke; margin-bottom: 50px">Drink Water</h1>
+		<h3>Goal: 2 Liters</h3>
+
+		<!-- Big Cup -->
+		<div class="cup">
+			<div
+				id="remaining"
+				class="remaining"
+			>
+				<span id="liters">2L </span>
+				<small>Remaining</small>
+			</div>
+
+			<div
+				class="percentage"
+				id="percentage"
+				style="color: #144fc6"
+			></div>
+		</div>
+
+		<p class="text">Select how much water you drank</p>
+
+		<!-- Small cups -->
+		<div class="cups_container">
+			<div class="cup cup-small">250 mL</div>
+			<div class="cup cup-small">250 mL</div>
+			<div class="cup cup-small">250 mL</div>
+			<div class="cup cup-small">250 mL</div>
+			<div class="cup cup-small">250 mL</div>
+			<div class="cup cup-small">250 mL</div>
+			<div class="cup cup-small">250 mL</div>
+			<div class="cup cup-small">250 mL</div>
+		</div>
+
+		<canvas id="confetti-canvas"></canvas>
+
+		<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,171 @@
+/* Custom Var */
+:root {
+	--red-color: rgb(220, 106, 106);
+	--temporary-border-outline: 3px dashed red;
+}
+
+/* Global settings */
+* {
+	box-sizing: border-box; /* border-box will make it so any padding will not effect the width */
+	padding: 0;
+	margin: 0;
+	outline: none;
+	border: none;
+	scroll-behavior: smooth;
+
+	letter-spacing: 1px;
+	color: whitesmoke;
+	font-family: "Roboto", sans-serif;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	min-height: 100lvh;
+	margin-bottom: 200px;
+	background-color: #151717;
+
+	overflow: hidden;
+}
+p {
+	font-size: 1rem;
+}
+ul,
+ol {
+	list-style: none;
+}
+
+#btn-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 70px;
+}
+
+.btn-style {
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 20px 15px;
+	background: rgb(140, 155, 185);
+	color: black;
+	letter-spacing: 3px;
+	font-size: 2rem;
+	border-radius: 10px;
+	cursor: pointer;
+
+	transition: all 0.5s ease;
+}
+.btn-style:active {
+	scale: 0.97;
+}
+
+#btn1:hover {
+	background-color: var(--red-color);
+	box-shadow: 0 0 60px var(--red-color);
+}
+
+#btn2:before,
+#btn2:after {
+	position: absolute;
+	content: "";
+	top: 0;
+	width: 0%;
+	height: 100%;
+	z-index: -1;
+	background-color: var(--red-color);
+	transition: all 0.4s ease-in;
+}
+#btn2::before {
+	left: 0;
+}
+#btn2:after {
+	right: 0;
+}
+#btn2:hover:before,
+#btn2:hover:after {
+	width: 50%;
+}
+
+#btn3:after {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	height: 0%;
+	width: 100%;
+	z-index: -1;
+	background-color: var(--red-color);
+	transition: all 0.4s ease;
+}
+#btn3:hover:after {
+	height: 100%;
+}
+
+#btn4:after {
+	position: absolute;
+	content: "";
+	bottom: 0;
+	left: 0;
+	height: 0%;
+	width: 100%;
+	z-index: -1;
+	background-color: var(--red-color);
+	transition: all 0.4s ease;
+}
+#btn4:hover:after {
+	height: 100%;
+}
+
+#btn5:hover {
+	box-shadow: 15px 15px 0 var(--red-color);
+	top: -5px;
+	left: -5px;
+}
+
+#btn6:after {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: -30%;
+	width: 0%;
+	height: 100%;
+	z-index: -1;
+	background-color: var(--red-color);
+	transition: all 0.7s ease;
+
+	transform-origin: top left;
+	transform: skew(50deg);
+}
+#btn6:hover:after {
+	width: 130%;
+}
+
+#btn7:after {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	width: 0%;
+	height: 100%;
+	z-index: -1;
+	background-color: var(--red-color);
+	transition: all 0.5s ease;
+
+	transform-origin: top left;
+}
+#btn7:hover:after {
+	width: 100%;
+}
+
+#btn8:hover {
+	background: transparent;
+	outline: 5px solid var(--red-color);
+	color: var(--red-color);
+}

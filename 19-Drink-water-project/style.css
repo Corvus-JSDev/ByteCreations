@@ -1,0 +1,135 @@
+/* Custom Var */
+:root {
+	--temporary-border-outline: 3px dashed red;
+	--water-blue: #3494e4;
+	--border-color: #144fc6;
+	--fill-color: #6ab3f8;
+}
+
+/* Global settings */
+* {
+	box-sizing: border-box; /* border-box will make it so any padding will not effect the width */
+	padding: 0;
+	margin: 0;
+	outline: none;
+	border: none;
+	scroll-behavior: smooth;
+
+	letter-spacing: 1px;
+	color: whitesmoke;
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	min-height: 100lvh;
+	background-color: var(--water-blue);
+
+	overflow-x: hidden;
+}
+p {
+	font-size: 1rem;
+}
+ul,
+ol {
+	list-style: none;
+}
+
+/* Specific Styles */
+
+h1 {
+	margin: 10px 0 0;
+}
+
+h3 {
+	font-weight: 400;
+	margin: 10px 0;
+}
+
+.remaining *,
+.percentage * {
+	color: var(--border-color) !important;
+}
+
+.cup {
+	background-color: white;
+	border: 4px solid var(--border-color);
+	color: var(--border-color);
+	border-radius: 0 0 40px 40px;
+	height: 330px;
+	width: 150px;
+	margin: 30px 0;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.cup.cup-small {
+	margin: 5px 0;
+	height: 95px;
+	width: 50px;
+	border-radius: 0 0 15px 15px;
+	background-color: rgba(255, 255, 255, 0.85);
+	cursor: pointer;
+	font-size: 14px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	transition: all 0.3s ease-in-out;
+}
+.cup-small.full {
+	background-color: var(--fill-color);
+	color: white;
+}
+
+.cups_container {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	width: 280px;
+	align-items: center;
+	justify-content: center;
+}
+
+.remaining {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	flex: 1;
+
+	transition: all 0.3s ease-in-out;
+}
+.remaining span {
+	font-size: 20px;
+	font-weight: bold;
+}
+.remaining small {
+	font-size: 12px;
+}
+
+.percentage {
+	background-color: var(--fill-color);
+	font-size: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-weight: bold;
+	height: 0px;
+
+	transition: all 0.3s ease-in-out;
+}
+
+.text {
+	text-align: center;
+	margin: 0 0 5px;
+}

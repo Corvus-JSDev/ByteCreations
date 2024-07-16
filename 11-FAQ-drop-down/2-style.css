@@ -1,0 +1,78 @@
+/* These are custom properties that can be called with var(name-here). These are basically variables in css */
+
+:root {
+	--inside-separation-for-QandA-cards: 20px;
+}
+
+/* border-box will make it so any padding will not effect the width */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	color: whitesmoke;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	/* overflow: hidden; */
+	padding: 50px 0px;
+	background-color: #181a1b;
+}
+
+#FAQ-container {
+	background: #2f3336;
+	border-radius: 20px;
+	padding: 50px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+.QandA-Card {
+	background: #284962;
+	width: 550px;
+	height: 100%;
+	padding: 30px 50px;
+	padding-right: 80px;
+	border-radius: 10px;
+	font-size: calc(100% + 5px);
+	cursor: pointer;
+
+	transition: all 0.3s ease;
+}
+
+.QandA-Card__content {
+	position: relative;
+	bottom: 20px;
+}
+div.QandA-Card__content > hr {
+	opacity: 0.5;
+}
+div.QandA-Card__content > h3 {
+	margin-bottom: var(--inside-separation-for-QandA-cards);
+}
+div.QandA-Card__content > p {
+	margin-top: var(--inside-separation-for-QandA-cards);
+}
+
+.expand-collapse-icon {
+	position: relative;
+	left: 445px;
+	width: 30px;
+	filter: invert(100%);
+}
+
+.compact p,
+.compact hr {
+	display: none;
+	margin: 0;
+}
+.compact h3 {
+	margin-bottom: 0px !important;
+}
