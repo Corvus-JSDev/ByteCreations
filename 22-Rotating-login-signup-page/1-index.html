@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="2-style.css" />
+		<link rel="stylesheet" href="2.1-starts-BG.css" />
+		<title>Sick log in page - Project</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="star-container">
+			<div id="stars"></div>
+			<div id="stars2"></div>
+			<div id="stars3"></div>
+		</div>
+
+		<h2 class="login-switch-label">Log In</h2>
+		<h2 class="signup-switch-label">Sign Up</h2>
+
+		<label id="flip-btn" class="switch">
+			<input type="checkbox" class="clickable-checkbox" />
+			<span class="slider round"></span>
+		</label>
+
+		<div class="stage">
+			<div class="login-signup-container">
+				<figure class="log-in-side">
+					<figure class="login__user-pass-figure">
+						<h2 id="login__h2">Log In</h2>
+
+						<h3 id="username-label">Username/Email</h3>
+						<input type="text" id="login__input-username" />
+
+						<h3 id="password-label">Password</h3>
+						<input type="password" id="login__input-password" />
+
+						<button class="login__btn btn">Log In</button>
+
+						<a id="login__link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Forgot Password?</a>
+					</figure>
+				</figure>
+
+				<figure class="sign-up-side">
+					<figure class="signup__user-pass-figure">
+						<h2 id="signup_h2">Sign Up</h2>
+
+						<h3 id="fullname-label">Full Name</h3>
+						<input type="text" id="fullname-figure__fullname" />
+
+						<h3 id="email-label">Email</h3>
+						<input type="email" id="email-input" />
+
+						<h3 id="username-label-signup">Username</h3>
+						<input type="text" id="signup__input-username" />
+						<h3 id="password-label-signup">Password</h3>
+						<input type="password" id="signup__input-password" />
+
+						<button class="signup__btn btn">Sign Up</button>
+					</figure>
+				</figure>
+
+				<figure class="left"></figure>
+				<figure class="right"></figure>
+			</div>
+		</div>
+
+		<script src="3-script.js"></script>
+	</body>
+</html>

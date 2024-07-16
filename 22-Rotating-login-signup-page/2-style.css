@@ -1,0 +1,377 @@
+/* These are custom properties that can be called with var(name-here). These are basically variables in css */
+
+:root {
+	--height-of-login-container: 550px;
+}
+
+/* border-box will make it so any padding will not effect the width */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	color: whitesmoke;
+	border: 0;
+	font-family: "Rubik", sans-serif;
+}
+*:focus {
+	outline: none;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	overflow-x: hidden;
+	padding: 50px 0px;
+	background-color: #121314;
+}
+
+/* ====== Animation and positioning of 3d element ====== */
+
+.stage {
+	width: 600px;
+	height: var(--height-of-login-container);
+	-webkit-perspective: 3000px;
+	-webkit-perspective-origin: 0 0;
+	position: absolute;
+	top: 220px;
+}
+figure {
+	display: block;
+	position: absolute;
+	height: var(--height-of-login-container);
+}
+
+.login-signup-container {
+	-webkit-transform-style: preserve-3d;
+	transition: transform 1s ease;
+}
+figure {
+	-webkit-transform-origin: 50% 50% 0;
+}
+
+.log-in-side {
+	-webkit-transform: translateZ(15px);
+	background: url(img/cuplainblack28.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	width: 600px;
+}
+.sign-up-side {
+	-webkit-transform: rotateY(180deg) translateZ(15px);
+	background: url(img/cuplainblack28.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	width: 600px;
+}
+
+.left {
+	-webkit-transform: rotateY(-90deg) translateZ(15px);
+	background: black;
+	width: 30px;
+}
+.right {
+	-webkit-transform: rotateY(90deg) translateZ(585px);
+	background: black;
+	width: 30px;
+}
+
+.rotate-to-signup {
+	transform: rotateY(180deg);
+}
+
+.rotate-to-login {
+	transform: rotateY(0deg);
+}
+
+/* ====== Styling ====== */
+
+/* Log in side */
+
+.login__user-pass-figure {
+	height: 80%;
+	width: 400px;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#login__h2,
+#signup_h2 {
+	position: absolute;
+	top: 3%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	font-size: calc(100% + 20px);
+	letter-spacing: 2px;
+	color: #f0ee97;
+}
+#signup_h2 {
+	top: -1%;
+}
+#login__link {
+	position: absolute;
+	top: 95%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	font-size: large;
+}
+#login__input-username {
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#login__input-password {
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#login__input-password,
+#login__input-username {
+	color: white;
+	width: 300px;
+	height: 35px;
+	font-size: 18px;
+	padding: 5px 10px;
+	border-radius: 5px;
+	background-color: rgb(33, 33, 33);
+	border: 2px solid #d1d088;
+}
+.btn {
+	position: absolute;
+	top: 75%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 5;
+
+	background-color: rgb(217, 215, 106);
+	color: black;
+	padding: 10px 35px;
+	font-size: 18px;
+	font-weight: bold;
+	border-radius: 5px;
+
+	cursor: pointer;
+
+	box-shadow: 0 0 20px rgba(225, 225, 225, 0.8);
+}
+.btn:active {
+	background-color: #b0af68;
+	box-shadow: 0 0 20px rgba(225, 225, 225, 0.5);
+}
+
+#username-label {
+	position: absolute;
+	top: 20%;
+	left: 40%;
+	transform: translate(-50%, -50%);
+}
+#password-label {
+	position: absolute;
+	top: 45%;
+	left: 29%;
+	transform: translate(-50%, -50%);
+}
+#username-label,
+#password-label {
+	font-size: 25px;
+	letter-spacing: 2px;
+	text-align: start;
+}
+
+/* Sign up side */
+
+.signup__user-pass-figure {
+	height: 80%;
+	width: 400px;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#fullname-figure__fullname {
+	color: white;
+	width: 300px;
+	height: 35px;
+	font-size: 18px;
+	padding: 5px 10px;
+	border-radius: 5px;
+	background-color: rgb(33, 33, 33);
+	border: 2px solid #d1d088;
+
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#fullname-label {
+	position: absolute;
+	top: 11.5%;
+	left: 25%;
+	transform: translate(-50%, -50%);
+	letter-spacing: 1px;
+}
+
+#email-label {
+	position: absolute;
+	top: 31.5%;
+	left: 19.5%;
+	transform: translate(-50%, -50%);
+	letter-spacing: 1px;
+}
+#email-input {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	color: white;
+	width: 300px;
+	height: 35px;
+	font-size: 18px;
+	padding: 5px 10px;
+	border-radius: 5px;
+	background-color: rgb(33, 33, 33);
+	border: 2px solid #d1d088;
+}
+
+#username-label-signup {
+	position: absolute;
+	top: 51.5%;
+	left: 25%;
+	transform: translate(-50%, -50%);
+	letter-spacing: 1px;
+}
+#signup__input-username {
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	color: white;
+	width: 300px;
+	height: 35px;
+	font-size: 18px;
+	padding: 5px 10px;
+	border-radius: 5px;
+	background-color: rgb(33, 33, 33);
+	border: 2px solid #d1d088;
+}
+
+#password-label-signup {
+	position: absolute;
+	top: 71.5%;
+	left: 25%;
+	transform: translate(-50%, -50%);
+	letter-spacing: 1px;
+}
+#signup__input-password {
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	color: white;
+	width: 300px;
+	height: 35px;
+	font-size: 18px;
+	padding: 5px 10px;
+	border-radius: 5px;
+	background-color: rgb(33, 33, 33);
+	border: 2px solid #d1d088;
+}
+
+.signup__btn {
+	top: 97%;
+}
+
+.login-signup-container > h2 {
+	font-family: "Poppins", sans-serif;
+}
+
+.switch {
+	position: absolute;
+	top: 130px;
+
+	display: inline-block;
+	width: 100px;
+	height: 34px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgb(210, 209, 124);
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 5px;
+	bottom: 4px;
+	background-color: white;
+	background-image: url(img/mouse-pointer.svg);
+	background-position: 4px 6px;
+	background-repeat: no-repeat;
+	background-size: 60%;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	transform: rotateZ(var(--rotateZ-JS, -80deg));
+	transform-origin: center center;
+	box-shadow: 0 0 7px rgba(255, 255, 255, 0.6);
+	filter: invert(100%);
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(63px);
+}
+
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+.signup-switch-label,
+.login-switch-label {
+	position: absolute;
+	letter-spacing: 2px;
+
+	top: 12%;
+	transform: translate(-50%, -50%);
+	color: rgb(210, 209, 124);
+}
+.signup-switch-label {
+	left: 55.2%;
+	font-size: 27px;
+}
+.login-switch-label {
+	left: 45.3%;
+	font-size: 28px;
+}
