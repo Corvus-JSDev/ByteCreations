@@ -1,0 +1,11 @@
+this one should be fast
+
+make a search bar
+
+make a class called "hidden-search" with a width of 0%
+
+add some transition blah blah blah
+
+make the button look like a search icon
+
+after the bar is unhidden, make it so when the button is clicked again it will preform a search and will not hide again

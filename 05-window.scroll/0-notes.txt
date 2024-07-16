@@ -1,0 +1,117 @@
+lets break down what this code does and how it works
+
+
+window.addEventListener("scroll", () => {
+	// this is what gets and prints the current scroll position
+	let scroll = window.scrollY;
+	//console.log(scroll);
+
+	function removeOddClass(div) {
+		div.classList.remove("odd");
+	}
+	function addOddClass(div) {
+		div.classList.add("odd");
+	}
+	function removeEvenClass(div) {
+		div.classList.remove("even");
+	}
+	function addEvenClass(div) {
+		div.classList.add("even");
+	}
+
+	function updateElement(element, threshold, isOdd) {
+		if (scroll >= threshold) {
+			element.style.opacity = 1;
+			isOdd ? removeOddClass(element) : removeEvenClass(element);
+		} else {
+			element.style.opacity = 0;
+			isOdd ? addOddClass(element) : addEvenClass(element);
+		}
+	}
+
+	const animateDivElements = [
+		{ div: div1, threshold: 240, isOdd: true },
+		{ div: div2, threshold: 470, isOdd: false },
+		{ div: div3, threshold: 680, isOdd: true },
+		{ div: div4, threshold: 890, isOdd: false },
+		{ div: div5, threshold: 1020, isOdd: true },
+		{ div: div6, threshold: 1200, isOdd: false },
+	];
+
+	animateDivElements.forEach(({ div, threshold, isOdd }) => {
+		updateElement(div, threshold, isOdd);
+	});
+});
+
+
+
+
+
+
+
+window.addEventListener("scroll", () => {})
+
+1. We start off with adding an event listener to the window itself.
+  - This is doing 2 things to the view window.
+  - First, every time the user scrolls and the window changes, the event listener will pick that up and run the arrow function.
+  - Secondly, the arrow function is controlling when the div elements will be hidden and shown.
+
+------------------------------------------------------------------------------------
+
+	let scroll = window.scrollY;
+
+2. Next we need to grab and log the current position of where the view window is at.
+  - window.scrollY is where the current view window is positioned, and we are storing that variable in: let = scroll
+  - This will let us keep constant track of where the users viewing coordinates on the Y axis
+
+------------------------------------------------------------------------------------
+
+3. The functions adding and removing classes don't need to be explained.
+
+------------------------------------------------------------------------------------
+
+function updateElement(element, threshold, isOdd) {
+		if (scroll >= threshold) {
+			element.style.opacity = 1;
+			isOdd ? removeOddClass(element) : removeEvenClass(element);
+		} else {
+			element.style.opacity = 0;
+			isOdd ? addOddClass(element) : addEvenClass(element);
+		}
+	}
+
+4. The updateElement function is responsible for updating the classes of each item.
+  - It takes in 3 parameters: element (the name of the element that is going to be updated), threshold (at what scrollY cord. will the element be shown), and isOdd.
+  - First it checks if the scrollY is greater than or equal to the threshold, meaning the user is at the point where we want the element to be shown.
+  Once there, the element will have it's CSS opacity style changed to 1, making the item visible.
+  Now we need to remove the even or odd class, so we use a one line if-else statement (? if : else) to check if the item is an odd number.
+     If the item is odd then it will using the DOM to remove the odd class from it's HTML, or vise versa with the even class.
+  - If the user scrolls back up then we need to hide the element again, thats where the ELSE comes in.
+     This basically does the same as the IF but in revere.
+
+------------------------------------------------------------------------------------
+
+const animateDivElements = [
+		{ div: div1, threshold: 240, isOdd: true },
+		{ div: div2, threshold: 470, isOdd: false },
+      ... etc. etc.
+	];
+
+5. Now we get to the animateDivElements array where we input all the data for each element that we want to change.
+  - Inside this array we input the elements values as objects so we can assign a name for each value, taking advantage of key:value pairs.
+      i.g. div (to store the variable name of the DOM item), threshold (to store the Y cord. of when we want to show the item), and isOdd.
+
+------------------------------------------------------------------------------------
+
+	animateDivElements.forEach(({ div, threshold, isOdd }) => {
+		updateElement(div, threshold, isOdd);
+	});
+
+6. Finally, we need to call the updateElement function and pass in every obj inside the animateDivElements array, we do this by calling animateDivElements.forEach and inside that we have 2 values: the item that we want to pass into the function and the function itself.
+  - Inside the item selection, we input the obj and deconstruct it to get it's individual parts to pass into the next part.
+  - Now we call the updateElement function and pass in that deconstructed obj parts.
+
+------------------------------------------------------------------------------------
+
+Final. Now every time the user scrolls the mouse, the event listener will check to see if the Y cord. the user is at matches with the threshold of when we want our items to show themselves. If they match the item will show. If they don't the item will fade away.
+NOTE: All the animations and transitions are implemented using CSS.

@@ -1,0 +1,151 @@
+/* These are custom properties that can be called with var(name-here). These are basically variables in css */
+/* 
+:root {
+} 
+*/
+
+/* border-box will make it so any padding will not effect the width */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	color: black;
+}
+body {
+	overflow-x: hidden;
+	background-color: #181a1b;
+}
+p {
+	margin-bottom: 30px;
+}
+
+.article-container {
+	position: relative;
+	z-index: 0;
+	background-color: rgb(243, 225, 208);
+	padding: 200px 10%;
+
+	transform-origin: 0% 0%;
+	transition: all 0.5s ease-in-out;
+}
+.open-menu-rotation {
+	transform: rotate(-15deg);
+}
+
+.img-container {
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 800px;
+	margin: 30px 0px;
+}
+#random-img {
+	z-index: 1;
+}
+#loading-img-text {
+	position: absolute;
+	letter-spacing: 2px;
+}
+
+.menu-container {
+	background-color: rgb(244, 138, 16);
+	width: 350px;
+	height: 350px;
+	border-radius: 50%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	transform: translate(-50%, -50%);
+
+	transition: all 1s ease-in-out;
+	cursor: pointer;
+}
+.hamburger-menu {
+	width: 80px;
+	height: 10px;
+	background: #fff;
+	border-radius: 5px;
+	transition: all 0.5s ease-in-out;
+
+	position: absolute;
+	bottom: 100px;
+	right: 65px;
+	/* transform: translate(-50%, -50%); */
+}
+.hamburger-menu::before,
+.hamburger-menu::after {
+	content: "";
+	position: absolute;
+	width: 80px;
+	height: 10px;
+	background: #fff;
+	border-radius: 5px;
+	transition: all 0.5s ease-in-out;
+}
+.hamburger-menu::before {
+	transform: translateY(-25px);
+}
+.hamburger-menu::after {
+	transform: translateY(25px);
+}
+/* Animation for menu */
+.open {
+	transform: translateX(-50px);
+	background: transparent;
+}
+.open::before {
+	transform: rotate(45deg) translate(35px, -35px);
+}
+.open::after {
+	transform: rotate(-45deg) translate(35px, 35px);
+}
+/* end of animation */
+
+.nav-links {
+	font-size: 1.5em;
+	opacity: 0;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 70px;
+
+	position: absolute;
+	z-index: -1;
+	bottom: 100px;
+	left: 50px;
+	transform: translateX(-300px);
+
+	transition: all 0.5s ease-out 0.4s;
+}
+.nav-links img {
+	width: 30px;
+}
+.nav-links a {
+	color: white;
+	text-decoration: none;
+	font-weight: 1000;
+	letter-spacing: 3px;
+}
+#link1 {
+	padding-left: 20px;
+}
+#link2 {
+	padding-left: 40px;
+}
+#link3 {
+	padding-left: 60px;
+}
+.nav-link-transition {
+	transform: translateX(0px);
+	opacity: 1;
+}

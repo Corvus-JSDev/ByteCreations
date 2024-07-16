@@ -1,0 +1,64 @@
+/* These are custom properties that can be called with var(name-here). These are basically variables in css */
+/* 
+:root {
+}
+ */
+
+/* border-box will make it so any padding will not effect the width */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	color: whitesmoke;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	overflow: hidden;
+	background-color: #181a1b;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+
+	position: relative;
+	bottom: 50px;
+}
+
+.init-key {
+	background-color: #373c3e;
+	text-align: center;
+	font-size: 0.8em;
+	padding: 20px 50px;
+}
+
+.keycode-value {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+
+	background-color: #373c3e;
+	text-align: center;
+	font-size: 0.8em;
+	padding: 20px 40px;
+}
+
+.key-code_container {
+	display: flex;
+	flex-direction: row;
+	gap: 100px;
+}
+
+.keycode-hr {
+	width: 130%;
+	opacity: 0.5;
+}

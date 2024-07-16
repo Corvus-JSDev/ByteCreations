@@ -1,0 +1,86 @@
+/* These are custom properties that can be called with var(name-here). These are basically variables in css */
+/* 
+:root {
+}
+ */
+
+/* border-box will make it so any padding will not effect the width */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	color: whitesmoke;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+	background-color: rgb(59, 176, 176);
+}
+
+#log-in-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	/* width: 400px; */
+	/* height: 600px; */
+	padding: 50px 70px;
+	background-color: rgb(22, 87, 120);
+}
+#username,
+#password {
+	padding: 5px;
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	border-bottom: 3px solid white;
+	font-size: 1em;
+	transition: all 0.5s ease;
+	margin-bottom: 50px;
+}
+#username:focus,
+#password:focus {
+	outline: none;
+	/* font-size: 1.1em; */
+}
+
+#login-btn {
+	color: black;
+	padding: 8px 30px;
+	background-color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 0.8em;
+}
+
+form > h3 {
+	letter-spacing: 2px;
+	top: 30px;
+}
+
+.username-label,
+.password-label,
+.username-label span,
+.password-label span {
+	position: relative;
+	z-index: 0;
+}
+input#username,
+input#password {
+	position: relative;
+	z-index: 1;
+}
+
+.username-label span,
+.password-label span {
+	position: relative;
+	top: 0;
+	opacity: 0.7;
+	transition: all 0.2s ease-out;
+}
+.non-selectable-text {
+	user-select: none;
+}

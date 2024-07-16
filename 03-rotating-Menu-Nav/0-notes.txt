@@ -1,0 +1,20 @@
+Take any article with a hamburger menu at the top-left and when the user clicks it, make the screen rotate x degrees from the point on the hamburger menu
+
+The hamburger menu icon should rotate OR transform into an X
+
+When the rotation is done some items will come in: home, about, and contact.
+These will be positioned to follow the diagonal angle. make sure to put icons for the corresponding item: a house for Home, a person for About, and mail for Contact
+
+BONUS: Add our logo and name in the bottom right to fill in the empty space
+OR cover the space with an element the same color as the article background. position: absolute
+
+
+== Plain:
+// 1. make the filler article
+
+// 2. add the circle and hamburger menu
+
+// 3. find out how to rotate the page
+  - The body background should be dark/black (z-index: -1)
+  - the background color of the article should be white and on top of the background, as a separate element (z-index: 1)
+  - Then the hamburger menu on top of that (z-index: 2)

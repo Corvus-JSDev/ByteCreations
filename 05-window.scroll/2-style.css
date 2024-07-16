@@ -1,0 +1,49 @@
+/* These are custom properties that can be called with var(name-here). These are basically variables in css */
+/* 
+:root {
+}
+ */
+
+/* border-box will make it so any padding will not effect the width */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	color: whitesmoke;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100vh;
+	background-color: #181a1b;
+	gap: 100px;
+	/* margin-bottom: 300px; */
+	overflow-x: hidden;
+}
+hr {
+	width: 1000px;
+}
+
+.scroll-div,
+.filler-divs {
+	background-color: cornflowerblue;
+	font-size: 2em;
+	font-weight: bold;
+	padding: 30px 30px;
+	display: block;
+	border-radius: 20px;
+}
+
+.scroll-div {
+	opacity: 0;
+	transition: all 0.4s ease;
+}
+
+.odd {
+	transform: translateX(350px);
+}
+.even {
+	transform: translateX(-350px);
+}

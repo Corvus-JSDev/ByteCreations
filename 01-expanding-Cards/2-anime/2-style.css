@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
+
+/* Custom Var */
+:root {
+	--temporary-border-red: 3px dashed red;
+	--temporary-border-blue: 3px dashed blue;
+}
+
+/* Global settings */
+* {
+	box-sizing: border-box; /* border-box will make it so any padding will not effect the width */
+	padding: 0;
+	margin: 0;
+	outline: none;
+	border: none;
+	scroll-behavior: smooth;
+
+	letter-spacing: 4px;
+	color: whitesmoke;
+	font-family: "Figtree", sans-serif;
+	font-weight: 500;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	min-height: 100lvh;
+	/* margin-bottom: 200px; */
+	background-color: #151717;
+
+	overflow: hidden;
+}
+ul,
+ol {
+	list-style: none;
+}
+
+.overall-container {
+	height: 600px;
+	width: 870px;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	gap: 15px;
+	transition: all 0.7s ease-in-out;
+}
+
+.img-container {
+	position: relative;
+	border-radius: 10px;
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	display: flex;
+	justify-content: center;
+	align-items: end;
+	padding-bottom: 50px;
+}
+/* use this and remove the "top" prop from all the character cards below to have even spacing between them all
+.img-container:nth-child(odd) {
+	top: 50px;
+}
+ */
+.char-name {
+	font-size: 20px;
+	background-color: #181b27;
+	padding: 5px 13px;
+	border-radius: 5px;
+	transition: all 0.5s ease;
+}
+.hidden {
+	opacity: 0;
+}
+
+.char1 {
+	background-image: url(./imgs/img-1.jpg);
+	top: -20px;
+}
+.char2 {
+	background-image: url(./imgs/img-2.jpg);
+	top: 0;
+}
+.char3 {
+	background-image: url(./imgs/img-3.jpg);
+	top: -10px;
+}
+.char4 {
+	background-image: url(./imgs/img-4.jpg);
+	top: 15px;
+}
+.char5 {
+	background-image: url(./imgs/img-5.jpg);
+	top: -5px;
+}

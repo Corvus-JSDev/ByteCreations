@@ -1,0 +1,111 @@
+/* These are custom properties that can be called with var(name-here). These are basically variables in css */
+:root {
+	--line-border-empty: #cdcdcd;
+	--line-border-filled: #3498db;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+	background-color: #181a1b;
+}
+
+/* Everything */
+.container {
+	/* border: 3px dashed red; */
+
+	text-align: center;
+}
+
+/* circles and bar */
+.progress-container {
+	/* border: 3px dashed blue; */
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	position: relative; /* for positioning things inside of it */
+	margin-bottom: 30px;
+	max-width: 100%;
+	width: 400px;
+
+	color: whitesmoke;
+}
+
+.progress-container::before {
+	content: "";
+	background-color: var(--line-border-empty);
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+	height: 4px;
+	width: 100%;
+	z-index: -1;
+}
+.progress-bar {
+	background-color: var(--line-border-filled);
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+	height: 4px;
+	width: 0%;
+	z-index: -1;
+	transition: 1s ease;
+}
+
+.circle {
+	background-color: #2a2e30;
+	color: lightgray;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border: 3px solid var(--line-border-empty);
+	transition: 1s ease;
+}
+
+.active {
+	border-color: var(--line-border-filled);
+}
+
+.btn {
+	background-color: var(--line-border-filled);
+	color: black;
+	font-weight: bold;
+	border: 0;
+	border-radius: 6px;
+	cursor: pointer;
+	padding: 8px 30px;
+	margin: 5px;
+}
+#back {
+	background-color: #2972a3;
+}
+
+.btn:focus {
+	outline: 0;
+}
+.btn:active {
+	transform: scale(0.95);
+}
+.btn:disabled {
+	background-color: darkgray !important;
+	cursor: not-allowed;
+	transform: scale(1);
+}

@@ -1,0 +1,72 @@
+/* These are custom properties that can be called with var(name-here). These are basically variables in css */
+/* 
+:root {
+
+}
+*/
+
+/* border-box will make it so any padding will not effect the width */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	color: whitesmoke;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+	background-color: #181a1b;
+}
+
+.search-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.search-btn {
+	color: black;
+	width: 60px;
+	height: 60px;
+	outline: none;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.search-bar {
+	color: black;
+	width: 0;
+	height: 60px;
+	font-size: 1em;
+	font-weight: 600;
+
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+
+	transition: all 0.5s ease-in-out;
+}
+.hidden-search {
+	width: 300px;
+	padding: 5px 10px;
+}
+
+.search-bar:focus,
+.search-btn:focus {
+	outline: none;
+}
+
+.message {
+	position: absolute;
+	top: 800px;
+}

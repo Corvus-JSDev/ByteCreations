@@ -1,0 +1,105 @@
+/* These are custom properties that can be called with var(name-here). These are basically variables in css */
+/* 
+:root {
+}
+ */
+
+/* border-box will make it so any padding will not effect the width */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	color: whitesmoke;
+}
+body {
+	height: 100vh;
+	overflow: hidden;
+	background-color: #181a1b;
+	margin-bottom: 1000px;
+}
+
+.landing-page-container {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+}
+
+.ps5-div,
+.xbox-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	transition: all 0.5s ease;
+}
+
+.ps5-div {
+	flex: 1;
+	height: 100vh;
+	background-image: url(./img/ps5update.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.xbox-div {
+	flex: 1;
+	height: 100vh;
+	background-image: url(./img/xboxupdate.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.intractable {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 80px;
+	margin-top: 20%;
+}
+
+.buy-now-btn {
+	color: white;
+	font-size: 1em;
+	font-weight: 600;
+	letter-spacing: 2px;
+	border: 2px solid white;
+	background-color: rgba(225, 225, 225, 0);
+	padding: 20px 60px;
+	cursor: pointer;
+
+	transition: all 0.5s ease;
+}
+.ps-span {
+	position: absolute;
+	left: 490px;
+	-webkit-filter: invert(1);
+	filter: invert(1);
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+.xbox-span {
+	position: absolute;
+	right: 345px;
+	-webkit-filter: invert(1);
+	filter: invert(1);
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+.buy-now-btn:hover {
+	background-color: rgba(225, 225, 225, 1);
+	color: black;
+}
+.buy-now-btn:hover > .ps-span,
+.buy-now-btn:hover > .xbox-span {
+	opacity: 1;
+}
+
+.ps5-div:hover,
+.xbox-div:hover {
+	flex: 1.3;
+}

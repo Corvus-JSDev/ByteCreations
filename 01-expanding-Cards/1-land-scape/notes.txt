@@ -1,0 +1,32 @@
+Build a site that has 5 imgs that are condensed by default except for the first one
+
+When the user clicks on an img that will set that imgs class to 'active' and will smoothly transition into that img
+
+The tag or name of the img will only come in after the img is full expanded
+
+
+== Process plan
+
+// get 5 imgs
+
+// line up those imgs in rows
+
+// put a crop on them all so they all have the same aspect ratio
+
+// apply css to scale them down horizontally
+
+// make a class called 'active' and have that class take up the full available space
+
+// write some js to change the clicked img into the one that expands
+
+// after the img is fully expanded, show to text
+
+
+
+== Problems
+
+the scaling system. flex was not the easiest to use and i still have no idea how it works
+
+the transition. i needed to make a div look like an img by putting the img as its background. i don't know what using the <img> tag wasn't working but of fucking well.
+
+the text delay. apparently the 4th element of the transition property is for delay

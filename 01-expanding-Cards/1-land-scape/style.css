@@ -1,0 +1,54 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+
+	background-color: rgb(9, 4, 22);
+}
+
+.img-container {
+	display: flex;
+	gap: 10px;
+
+	width: 1300px;
+}
+
+.img {
+	background-size: auto 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 500px;
+	border-radius: 30px;
+	color: whitesmoke;
+	cursor: pointer;
+	flex: 0.2;
+
+	transition: flex 1s ease-in-out;
+
+	position: relative; /* needed for the text */
+}
+.img.active {
+	flex: 1;
+}
+.img.active h3 {
+	opacity: 1;
+	transition: opacity 0.5s ease 0.5s;
+}
+
+.img h3 {
+	position: absolute;
+	font-size: 18px;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0;
+}
